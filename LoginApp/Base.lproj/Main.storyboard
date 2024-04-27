@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +33,10 @@
                                         <rect key="frame" x="0.0" y="136" width="353" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Log In"/>
+                                        <connections>
+                                            <action selector="logInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Re4-9j-q1l"/>
+                                            <segue destination="lTp-AG-tzh" kind="presentation" identifier="EntranceViewController" modalPresentationStyle="fullScreen" id="rFp-gi-otL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -73,13 +77,69 @@
                             <constraint firstItem="BCD-xQ-cz1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="oJa-KE-gPZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logInButton" destination="b2k-Kn-UI0" id="lfq-jf-ncs"/>
+                        <outlet property="nameTextField" destination="89k-em-fYW" id="Qap-Nh-6vJ"/>
+                        <outlet property="passwordTextField" destination="HV9-QV-OME" id="vIT-Sp-2Vq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
+        <!--Entrance View Controller-->
+        <scene sceneID="7eN-mP-U7d">
+            <objects>
+                <viewController id="lTp-AG-tzh" customClass="EntranceViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ror-SO-qHl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="185" translatesAutoresizingMaskIntoConstraints="NO" id="jrc-6N-s0S">
+                                <rect key="frame" x="16" y="392.3333333333332" width="81.666666666666671" height="34.333333333333314"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, User!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgE-6a-jmM">
+                                <rect key="frame" x="136" y="140" width="121" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOZ-tn-Uml">
+                                <rect key="frame" x="156" y="562" width="81.666666666666671" height="34.333333333333343"/>
+                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log out"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="lTp-AG-tzh" eventType="touchUpInside" id="ejg-Rr-C6I"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Q3f-nm-L6M"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XgE-6a-jmM" firstAttribute="leading" secondItem="Q3f-nm-L6M" secondAttribute="leading" constant="136" id="9uw-JT-Dbp"/>
+                            <constraint firstItem="XgE-6a-jmM" firstAttribute="top" secondItem="Q3f-nm-L6M" secondAttribute="top" constant="140" id="ANg-fx-YcG"/>
+                            <constraint firstItem="gOZ-tn-Uml" firstAttribute="leading" secondItem="Q3f-nm-L6M" secondAttribute="leading" constant="156" id="KPn-ZI-cOl"/>
+                            <constraint firstItem="Q3f-nm-L6M" firstAttribute="bottom" secondItem="gOZ-tn-Uml" secondAttribute="bottom" constant="255.66999999999999" id="MhO-Z1-2ai"/>
+                            <constraint firstItem="Q3f-nm-L6M" firstAttribute="trailing" secondItem="XgE-6a-jmM" secondAttribute="trailing" constant="136" id="lrl-Ft-eH9"/>
+                            <constraint firstItem="Q3f-nm-L6M" firstAttribute="trailing" secondItem="gOZ-tn-Uml" secondAttribute="trailing" constant="155.33000000000001" id="vmq-Ex-IUp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="L7l-7v-htj"/>
+                    <connections>
+                        <outlet property="greetingLabel" destination="XgE-6a-jmM" id="N7T-Lu-2iJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JuP-QR-IKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838.93129770992368" y="3.5211267605633805"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
