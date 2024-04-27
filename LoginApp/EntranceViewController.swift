@@ -7,12 +7,12 @@
 
 import UIKit
 
-class EntranceViewController: UIViewController {
+final class EntranceViewController: UIViewController {
     
     @IBOutlet var greetingLabel: UILabel!
     
     var userName: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +29,9 @@ class EntranceViewController: UIViewController {
         view.layer.insertSublayer(gradientLayer, at: 0)
         
         if let userName = userName {
-            greetingLabel.text = "Привет, \(userName)!"
+            greetingLabel.text = "Welcome, \(userName)!"
+            greetingLabel.textColor = .white
+            greetingLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .bold)
         }
     }
     

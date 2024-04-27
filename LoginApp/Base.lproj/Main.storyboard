@@ -101,6 +101,7 @@
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, User!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgE-6a-jmM">
                                 <rect key="frame" x="136" y="140" width="121" height="20.333333333333343"/>
+                                <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -114,15 +115,25 @@
                                     <action selector="cancelButtonTapped:" destination="lTp-AG-tzh" eventType="touchUpInside" id="ejg-Rr-C6I"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.wave.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xte-37-B2g">
+                                <rect key="frame" x="131" y="216.33333333333331" width="130" height="86.333333333333371"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Xte-37-B2g" secondAttribute="height" multiplier="65:44" id="s8Q-w8-r67"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q3f-nm-L6M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Xte-37-B2g" firstAttribute="leading" secondItem="Q3f-nm-L6M" secondAttribute="leading" constant="131" id="4xE-Ts-lpd"/>
                             <constraint firstItem="XgE-6a-jmM" firstAttribute="leading" secondItem="Q3f-nm-L6M" secondAttribute="leading" constant="136" id="9uw-JT-Dbp"/>
                             <constraint firstItem="XgE-6a-jmM" firstAttribute="top" secondItem="Q3f-nm-L6M" secondAttribute="top" constant="140" id="ANg-fx-YcG"/>
                             <constraint firstItem="gOZ-tn-Uml" firstAttribute="leading" secondItem="Q3f-nm-L6M" secondAttribute="leading" constant="156" id="KPn-ZI-cOl"/>
                             <constraint firstItem="Q3f-nm-L6M" firstAttribute="bottom" secondItem="gOZ-tn-Uml" secondAttribute="bottom" constant="255.66999999999999" id="MhO-Z1-2ai"/>
+                            <constraint firstItem="Xte-37-B2g" firstAttribute="top" secondItem="XgE-6a-jmM" secondAttribute="bottom" constant="54.670000000000002" id="W0C-cc-BwO"/>
                             <constraint firstItem="Q3f-nm-L6M" firstAttribute="trailing" secondItem="XgE-6a-jmM" secondAttribute="trailing" constant="136" id="lrl-Ft-eH9"/>
+                            <constraint firstItem="Q3f-nm-L6M" firstAttribute="trailing" secondItem="Xte-37-B2g" secondAttribute="trailing" constant="132" id="lxN-QE-Gre"/>
                             <constraint firstItem="Q3f-nm-L6M" firstAttribute="trailing" secondItem="gOZ-tn-Uml" secondAttribute="trailing" constant="155.33000000000001" id="vmq-Ex-IUp"/>
                         </constraints>
                     </view>
@@ -137,11 +148,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hand.wave.fill" catalog="system" width="128" height="128"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
